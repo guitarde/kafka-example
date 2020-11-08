@@ -16,7 +16,7 @@ public class PersonController {
 		this.publishMessage = publishMessage;
 	}
 
-	@PostMapping()
+	@PostMapping(consumes = {"application/json"},produces = {"application/json"})
 	public void publishMessage(@RequestBody String body) {
 		System.out.println("messages::: "+body);
 		this.publishMessage.sendMessage(body, "myTopic");
